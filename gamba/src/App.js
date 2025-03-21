@@ -136,6 +136,7 @@ function App() {
         <div style={{ display: "flex", gap: "10px" }}>
           {uniqueCards.map((card, index) => {
             const cardCount = deck.filter((c) => c === card).length;
+            const probability = ((cardCount / deck.length) * 100).toFixed(2);
             let test = card
             if (card.startsWith("-")) {
               let effect = parseInt(card.replace("-", "").replace("%", ""));
@@ -163,6 +164,7 @@ function App() {
                     disabled={drawCount >= 7}
                   />
                   <div>{cardCount} left</div>
+                  <div>{probability}% to get</div>
                 </div>
               )
             );
@@ -175,9 +177,9 @@ function App() {
           <li key={index}>
           {`Card ${index + 1}: ${entry.card} -> Value: ${entry.value.toFixed(
             2
-          )}% | Average Remaining Impact: ${entry.avgRemainingImpact.toFixed(
+          )}% | Estimate Value of Next Card: ${entry.avgRemainingImpact.toFixed(
             2
-          )} | Heuristic: ${entry.advice}`}
+          )} | Draw?: ${entry.advice}`}
         </li>
       ))}
       </ul>

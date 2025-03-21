@@ -97,7 +97,7 @@ function App() {
 
   let avgRemainingImpact = expectedImpact / newDeck.length || 0;
 
-    let shouldContinue = avgRemainingImpact > 0;
+    let shouldContinue = avgRemainingImpact >= 0;
     let advice = shouldContinue
       ? "Continue drawing cards"
       : "Stop drawing cards";
@@ -130,6 +130,7 @@ function App() {
   return (
     <div>
       <h1>Card Draw Simulator</h1>
+      <button onClick={handleReset}>Reset Game</button>
       <div>
         <h2>Draw Cards</h2>
         <div style={{ display: "flex", gap: "10px" }}>
@@ -181,7 +182,7 @@ function App() {
       ))}
       </ul>
       <h2>Final Value: {value.toFixed(2)}%</h2>
-      <h2>Keep Going?
+      <h2>{drawCount >= 7 ? "It's Joever" : "Keep Going?"}
       {history.length > 0 && (
         <img
           src={history[history.length - 1].advice === "Continue drawing cards" ? roulette : kmsdog}
@@ -190,7 +191,6 @@ function App() {
         />
       )}
       </h2>
-      <button onClick={handleReset}>Reset Game</button>
     </div>
   );
 }

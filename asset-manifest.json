@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/gamba/static/css/main.e6c13ad2.css",
-    "main.js": "/gamba/static/js/main.2f14696b.js",
+    "main.js": "/gamba/static/js/main.e9e4b14f.js",
     "static/js/453.420fb7fd.chunk.js": "/gamba/static/js/453.420fb7fd.chunk.js",
     "static/media/gamba.gif": "/gamba/static/media/gamba.4ce715df7d2ed682ea99.gif",
     "static/media/times_3.png": "/gamba/static/media/times_3.b7395c7fad851d2d91d9.png",
@@ -18,11 +18,11 @@
     "static/media/kmsdog.webp": "/gamba/static/media/kmsdog.794608d6799b103dbfab.webp",
     "index.html": "/gamba/index.html",
     "main.e6c13ad2.css.map": "/gamba/static/css/main.e6c13ad2.css.map",
-    "main.2f14696b.js.map": "/gamba/static/js/main.2f14696b.js.map",
+    "main.e9e4b14f.js.map": "/gamba/static/js/main.e9e4b14f.js.map",
     "453.420fb7fd.chunk.js.map": "/gamba/static/js/453.420fb7fd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.2f14696b.js"
+    "static/js/main.e9e4b14f.js"
   ]
 }

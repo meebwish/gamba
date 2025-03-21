@@ -135,9 +135,25 @@ function App() {
         <div style={{ display: "flex", gap: "10px" }}>
           {uniqueCards.map((card, index) => {
             const cardCount = deck.filter((c) => c === card).length;
+            let test = card
+            if (card.startsWith("-")) {
+              let effect = parseInt(card.replace("-", "").replace("%", ""));
+              test = `-${Math.min(effect, value - 100)}%`;
+            }
+            if (card == "x2" || card == "x3") {
+              let multiplier = parseFloat(card.replace("x", ""));
+              let effect = value * multiplier;
+              test = `+${effect}%`;
+            }
+            if (card == "x0.5") {
+              let multiplier = parseFloat(card.replace("x", ""));
+              let effect = value * multiplier;
+              test = `-${Math.min(effect, value - 100)}%`;
+            }
             return (
               cardCount > 0 && (
                 <div key={index} style={{ textAlign: "center" }}>
+                  <p>{test}</p>
                   <img
                     src={cardImages[card]}
                     alt={card}

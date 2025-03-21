@@ -125,12 +125,21 @@ function App() {
     setDrawCount(0);
   };
 
+  const handleRandomDraw = () => {
+    if (deck.length > 0) {
+      const randomCard = deck[Math.floor(Math.random() * deck.length)];
+      handleDrawCard(randomCard);
+    }
+  };
+
+
   const uniqueCards = Array.from(new Set(initialDeck));
 
   return (
     <div>
       <h1>Card Draw Simulator</h1>
       <button onClick={handleReset}>Reset Game</button>
+      <button onClick={handleRandomDraw}>Draw Random Card</button>
       <div>
         <h2>Draw Cards</h2>
         <div style={{ display: "flex", gap: "10px" }}>

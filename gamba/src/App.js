@@ -144,7 +144,7 @@ function App() {
             }
             if (card == "x2" || card == "x3") {
               let multiplier = parseFloat(card.replace("x", ""));
-              let effect = value * multiplier;
+              let effect = value * multiplier - value;
               test = `+${effect}%`;
             }
             if (card == "x0.5") {

@@ -10,6 +10,8 @@ import minus30 from "./assets/minus_30.png";
 import minus40 from "./assets/minus_40.png";
 import minus50 from "./assets/minus_50.png";
 import x05 from "./assets/divide_2.png";
+import roulette from "./assets/gamba.gif";
+import kmsdog from "./assets/kmsdog.webp";
 
 function App() {
   const initialDeck = [
@@ -163,6 +165,15 @@ function App() {
       ))}
       </ul>
       <h2>Final Value: {value.toFixed(2)}%</h2>
+      <h2>Keep Going?
+      {history.length > 0 && (
+        <img
+          src={history[history.length - 1].advice === "Continue drawing cards" ? roulette : kmsdog}
+          alt={history[history.length - 1].advice}
+          style={{ width: "200px", height: "200px" }}
+        />
+      )}
+      </h2>
       <button onClick={handleReset}>Reset Game</button>
     </div>
   );

@@ -5,6 +5,7 @@ import plus40 from "./assets/add_40.png";
 import plus50 from "./assets/add_50.png";
 import x2 from "./assets/times_2.png";
 import x3 from "./assets/times_3.png";
+import x4 from "./assets/times_4.png";
 import minus20 from "./assets/minus_20.png";
 import minus30 from "./assets/minus_30.png";
 import minus40 from "./assets/minus_40.png";
@@ -20,9 +21,9 @@ function App() {
     ...Array(2).fill("+40%"),
     ...Array(2).fill("+50%"),
     ...Array(2).fill("x2"),
-    "x3",
-    ...Array(2).fill("-20%"),
-    ...Array(2).fill("-30%"),
+    ...Array(2).fill("x4"),
+    "-20%",
+    "-30",
     "-40%",
     "-50%",
     "x0.5",
@@ -41,6 +42,7 @@ function App() {
     "+50%": plus50,
     "x2": x2,
     "x3": x3,
+    "x4": x4,
     "-20%": minus20,
     "-30%": minus30,
     "-40%": minus40,
@@ -151,7 +153,7 @@ function App() {
               let effect = parseInt(card.replace("-", "").replace("%", ""));
               test = `-${Math.min(effect, value - 100)}%`;
             }
-            if (card == "x2" || card == "x3") {
+            if (card == "x2" || card == "x3" || card == "x4") {
               let multiplier = parseFloat(card.replace("x", ""));
               let effect = value * multiplier - value;
               test = `+${effect}%`;

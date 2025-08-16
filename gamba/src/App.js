@@ -23,7 +23,7 @@ function App() {
     ...Array(2).fill("x2"),
     ...Array(2).fill("x4"),
     "-20%",
-    "-30",
+    "-30%",
     "-40%",
     "-50%",
     "x0.5",
@@ -153,12 +153,12 @@ function App() {
               let effect = parseInt(card.replace("-", "").replace("%", ""));
               test = `-${Math.min(effect, value - 100)}%`;
             }
-            if (card == "x2" || card == "x3" || card == "x4") {
+            if (card === "x2" || card === "x3" || card === "x4") {
               let multiplier = parseFloat(card.replace("x", ""));
               let effect = value * multiplier - value;
               test = `+${effect}%`;
             }
-            if (card == "x0.5") {
+            if (card === "x0.5") {
               let multiplier = parseFloat(card.replace("x", ""));
               let effect = value * multiplier;
               test = `-${Math.min(effect, value - 100)}%`;
